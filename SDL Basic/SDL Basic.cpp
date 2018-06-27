@@ -55,7 +55,13 @@ int main()
 	}
 
 	Uint32 *buffer = new Uint32[WINDOW_WIDTH * WINDOW_HEIGHT];
-	memset(buffer, 24, WINDOW_WIDTH * WINDOW_HEIGHT * sizeof(Uint32));
+	memset(buffer, 0x00, WINDOW_WIDTH * WINDOW_HEIGHT * sizeof(Uint32));
+
+	buffer[30000] = 0xFFFFFFFF; // set color of single pixel
+
+	for (unsigned int i = 0; i < WINDOW_WIDTH * WINDOW_HEIGHT; ++i) {
+		buffer[i] = 0x0000FF11;
+	}
 
 	SDL_UpdateTexture(texture, NULL, buffer, WINDOW_WIDTH * sizeof(Uint32));
 	SDL_RenderClear(renderer);
