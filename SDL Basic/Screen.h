@@ -17,6 +17,8 @@ public:
 	Screen();
 	virtual ~Screen();
 	bool init();
+	void setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
+	void update();
 	bool processEvents();
 	void close();
 };
