@@ -24,8 +24,8 @@ int main()
 		// Updade particles
 
 		// Draw particles
-		for (int y = 0; y < Screen::WINDOW_HEIGHT; ++y) {
-			for (int x = 0; x < Screen::WINDOW_WIDTH; ++x) {
+		for (int y = 0; y < Screen::SCREEN_HEIGHT; ++y) {
+			for (int x = 0; x < Screen::SCREEN_WIDTH; ++x) {
 				screen.setPixel(x, y, 128, 0, 255);
 			}
 		}
