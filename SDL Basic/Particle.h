@@ -12,6 +12,6 @@ public:
 public:
 	Particle();
 	virtual ~Particle();
-	void update();
+	void update(int interval);
 };
 
