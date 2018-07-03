@@ -4,7 +4,10 @@
 #include "stdafx.h"
 #include <iostream>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 #include "Screen.h"
+#include "Swarm.h"
 
 // #undef ponizej to jakas sztuczka z
 // https://stackoverflow.com/questions/6847360/error-lnk2019-unresolved-external-symbol-main-referenced-in-function-tmainc
@@ -16,13 +19,19 @@ using namespace std;
 
 int main()
 {
+	srand(static_cast<unsigned int>(time(NULL)));
+
 	Screen screen;
 	if (false == screen.init()) {
 		cout << "Error initialization SDL" << endl;
 	}
 
+	Swarm swarm;
+
 	while (true) { // ta pętla żre cały jeden rdzeń procesora
 		// Updade particles
+
+		/*
 		int elapsed = SDL_GetTicks();
 
 		unsigned int red = static_cast<unsigned char>((1 + sin(elapsed * 0.0001)) * 128);
@@ -36,6 +45,7 @@ int main()
 			}
 		}
 		screen.setPixel(400, 300, 255, 255, 255);
+		*/
 
 		// Draw the screen
 		screen.update();
