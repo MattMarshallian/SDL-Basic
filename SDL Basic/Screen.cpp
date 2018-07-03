@@ -50,7 +50,7 @@ bool Screen::init()
 	m_buffer[30000] = 0xFFFFFFFF; // set color of single pixel
 
 	for (unsigned int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i) {
-		m_buffer[i] = 0x0000FF11;
+		m_buffer[i] = 0x0000000;
 	}
 
 	update();
@@ -79,6 +79,11 @@ void Screen::close()
 }
 
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
+
+	// it is inefficient 
+	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT) {
+		return;
+	}
 	Uint32 color = 0;
 
 	color += red;
