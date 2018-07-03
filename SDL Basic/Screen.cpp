@@ -45,7 +45,7 @@ bool Screen::init()
 	}
 
 	m_buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
-	memset(m_buffer, 0x00, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+	clear();
 
 	m_buffer[30000] = 0xFFFFFFFF; // set color of single pixel
 
@@ -68,6 +68,12 @@ bool Screen::processEvents()
 	};
 	return true;
 }
+
+
+void Screen::clear() {
+	memset(m_buffer, 0x00, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+}
+
 
 void Screen::close()
 {

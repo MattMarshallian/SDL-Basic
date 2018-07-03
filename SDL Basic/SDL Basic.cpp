@@ -31,6 +31,7 @@ int main()
 	while (true) { // ta pętla żre cały jeden rdzeń procesora
 		// Updade particles
 
+		screen.clear();
 		swarm.update();
 
 		int elapsed = SDL_GetTicks();
