@@ -31,6 +31,8 @@ int main()
 	while (true) { // ta pętla żre cały jeden rdzeń procesora
 		// Updade particles
 
+		swarm.update();
+
 		int elapsed = SDL_GetTicks();
 		unsigned int red = static_cast<unsigned char>((1 + sin(elapsed * 0.0003)) * 128);
 		unsigned int green = static_cast<unsigned char>((1 + sin(elapsed * 0.0005)) * 128);
