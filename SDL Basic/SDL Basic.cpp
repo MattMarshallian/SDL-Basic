@@ -32,7 +32,7 @@ int main()
 		// Updade particles
 
 		int elapsed = SDL_GetTicks();
-		screen.clear();
+		// screen.clear();
 		swarm.update(elapsed);
 
 		unsigned int red = static_cast<unsigned char>((1 + sin(elapsed * 0.0003)) * 128);
@@ -48,6 +48,8 @@ int main()
 
 			screen.setPixel(x, y, red, green, blue);
 		}
+
+		screen.boxBlur();
 
 		// Draw the screen
 		screen.update();

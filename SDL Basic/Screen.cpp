@@ -70,6 +70,13 @@ bool Screen::processEvents()
 }
 
 
+void Screen::boxBlur()
+{
+
+}
+
+
+
 void Screen::clear() {
 	memset(m_buffer, 0x00, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 }
