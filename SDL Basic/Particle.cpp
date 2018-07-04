@@ -27,7 +27,12 @@ void Particle::update(int interval)
 
 	m_x += xspeed * interval;
 	m_y += yspeed * interval;
+	
 	if (m_x <= -1 || m_x >= 1 || m_y <= -1 || m_y >= 1) {
+		init();
+	}
+
+	if (rand() < RAND_MAX / 100) {
 		init();
 	}
 }
